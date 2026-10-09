@@ -1,0 +1,25 @@
+baseURL = "https://patronio.net/"
+languageCode = "en"
+title = "patronio"
+theme = "PaperMod"
+
+[params]
+  homeInfoParams = {Title = "Welcome to Patronio", Content = "A blog about technology and ideas."}
+  ShowReadingTime = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Posts"
+    url = "/posts/"
+    weight = 2
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 3
