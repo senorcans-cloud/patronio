@@ -1,7 +1,7 @@
 +++
 date = '2026-10-06T16:00:18+02:00'
 draft = false
-title = 'Why'
+title = 'Why I Started This Blog'
 +++
 
 

@@ -1,25 +1,113 @@
-baseURL = "https://patronio.net/"
-languageCode = "en"
-title = "patronio"
-theme = "PaperMod"
+# =============================================================================
+# patronio.net — Hugo Configuration
+# This is the opening. Get it wrong, and the middlegame hurts.
+# Hugo docs:     https://gohugo.io/getting-started/configuration/
+# PaperMod docs: https://adityatelange.github.io/hugo-PaperMod/
+# =============================================================================
 
+# -- Site Basics --
+baseURL = "https://patronio.net/"   # Your square on the internet's board. Without it, links get lost.
+locale = "en-us"                    # Replaces languageCode, which your Hugo version marks as deprecated. Play by current rules.
+title = "Patronio"                  # Browser tab and site header. Capitalized. A name deserves respect.
+theme = "PaperMod"                  # Must match the folder name in themes/. One typo and the game is over.
+
+# -- Content --
+summaryLength = 30                  # Words in each summary on the home page. Enough to intrigue, not enough to bore.
+enableRobotsTXT = true              # Generates robots.txt so search engines can find you. Playing without an audience is no fun.
+
+# -- Pagination --
+[pagination]
+  pagerSize = 10                    # Posts per page. Ten moves, then recalculate.
+
+# -- Output Formats --
+[outputs]
+  home = ["HTML", "RSS", "JSON"]    # HTML is the site. RSS lets people follow you. JSON powers the search. All pieces working together.
+
+# =============================================================================
+# PaperMod Theme Parameters
+# Full list: https://adityatelange.github.io/hugo-PaperMod/posts/papermod/papermod-variables/
+# =============================================================================
 [params]
-  homeInfoParams = {Title = "Welcome to Patronio", Content = "A blog about technology and ideas."}
-  ShowReadingTime = true
-  ShowPostNavLinks = true
-  ShowBreadCrumbs = true
-  ShowCodeCopyButtons = true
+  # -- SEO --
+  description = "Technology, IT, chess, ideas, and everything I learn along the way."  # What Google shows under your link. First impression. Make it count.
+  author = "Patronio"               # Signs your posts. Nobody wins a game anonymously.
 
-[menu]
-  [[menu.main]]
-    name = "Home"
-    url = "/"
-    weight = 1
-  [[menu.main]]
-    name = "Posts"
-    url = "/posts/"
-    weight = 2
-  [[menu.main]]
-    name = "About"
-    url = "/about/"
-    weight = 3
+  # -- Appearance --
+  defaultTheme = "auto"             # Light or dark, following the visitor's system. Adapting to your opponent is basic.
+  ShowReadingTime = true            # Estimated reading time. The clock is always running.
+  ShowBreadCrumbs = true            # Home > Posts > Title. Always know where you are on the board.
+  ShowCodeCopyButtons = true        # Copy button on code blocks. Useful for technical posts.
+  ShowPostNavLinks = true           # "Previous / Next" at the end of each post. There is always another move.
+  ShowToc = true                    # Table of contents on long posts. See the structure before you calculate.
+  TocOpen = false                   # TOC starts collapsed. Never reveal all your ideas at once.
+  ShowShareButtons = false          # No share buttons. Clean. Anything unnecessary is a distraction.
+  ShowWordCount = false             # Reading time is enough. Counting words is counting pawns.
+
+  # -- Home Page --
+  [params.homeInfoParams]
+    Title = "Welcome to Patronio"
+    Content = "Technology, IT, chess, ideas, and everything I learn along the way."
+
+  # -- Social Icons (shown below the home page greeting) --
+  # Order here is order on screen. Like an opening: solid moves first.
+  [[params.socialIcons]]
+    name = "github"                 # Your code. The games you've already played.
+    url = "https://github.com/senorcans-cloud"
+
+  [[params.socialIcons]]
+    name = "lichess"                # Your board. Let them challenge you, if they dare.
+    url = "https://lichess.org/@/patronio"
+
+  # -- Search (Fuse.js) --
+  [params.fuseOpts]
+    isCaseSensitive = false         # "Chess" and "chess" are the same. No need to overcomplicate.
+    shouldSort = true               # Most relevant results first. The best move always goes on top.
+    location = 0
+    distance = 1000
+    threshold = 0.4                 # 0.0 = strict, 1.0 = loose. 0.4 is balance, like a sound position.
+    minMatchCharLength = 0
+    keys = ["title", "permalink", "summary", "content"]  # Where it searches: title, URL, summary, and content.
+
+# =============================================================================
+# Navigation Menu
+# weight = left-to-right order. Lower number, further left.
+# =============================================================================
+[[menu.main]]
+  identifier = "posts"
+  name = "Posts"
+  url = "/posts/"
+  weight = 10
+
+[[menu.main]]
+  identifier = "tags"
+  name = "Tags"
+  url = "/tags/"
+  weight = 20
+
+[[menu.main]]
+  identifier = "archives"
+  name = "Archive"
+  url = "/archives/"
+  weight = 30
+
+[[menu.main]]
+  identifier = "search"
+  name = "Search"
+  url = "/search/"
+  weight = 40
+
+[[menu.main]]
+  identifier = "about"
+  name = "About"
+  url = "/about/"
+  weight = 50
+
+# =============================================================================
+# Markdown & Code Highlighting
+# =============================================================================
+[markup]
+  [markup.highlight]
+    codeFences = true               # Enables ``` code blocks. Essential.
+    noClasses = true                # Inline colors, no extra CSS. Simple, and it works.
+    style = "monokai"               # Dark theme for code. Elegant, like a well-played endgame.
+    anchorLineNos = false
