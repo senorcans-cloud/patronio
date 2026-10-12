@@ -2,6 +2,8 @@
 date = '2026-10-12T12:14:41+02:00'
 draft = false
 title = 'Palantir Made Me Think of Junger'
+
+summary = 'My wife’s company turned down Palantir, and I thought it was a good excuse to talk about Jünger.'   # Shown on the home page card
 +++
 
 

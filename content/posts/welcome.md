@@ -2,6 +2,10 @@
 date = '2026-10-06T16:00:18+02:00'
 draft = false
 title = 'Why I Started This Blog'
+
+summary = 'I don’t really know how to introduce this blog or explain why I want to write it, so I’ll start from the beginning and tell you what brought me here.'   # Shown on the home page card
+
+description = 'The story behind patronio.net and what this blog is about.'  # Shown to Google and under the post title
 +++
 
 

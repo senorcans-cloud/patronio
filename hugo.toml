@@ -12,7 +12,7 @@ title = "Patronio"                  # Browser tab and site header. Capitalized. 
 theme = "PaperMod"                  # Must match the folder name in themes/. One typo and the game is over.
 
 # -- Content --
-summaryLength = 30                  # Words in each summary on the home page. Enough to intrigue, not enough to bore.
+summaryLength = 30                  # Fallback summary length if a post has no summary field. Write your own. Always.
 enableRobotsTXT = true              # Generates robots.txt so search engines can find you. Playing without an audience is no fun.
 
 # -- Pagination --
@@ -51,12 +51,16 @@ enableRobotsTXT = true              # Generates robots.txt so search engines can
   # -- Social Icons (shown below the home page greeting) --
   # Order here is order on screen. Like an opening: solid moves first.
   [[params.socialIcons]]
+    name = "email"                  # A direct line. Forwarded by Cloudflare, so your personal inbox stays hidden.
+    url = "mailto:mail@patronio.net"
+
+  [[params.socialIcons]]
     name = "github"                 # Your code. The games you've already played.
     url = "https://github.com/senorcans-cloud"
 
   [[params.socialIcons]]
     name = "lichess"                # Your board. Let them challenge you, if they dare.
-    url = "https://lichess.org/@/patronio"
+    url = "https://lichess.org/@/YOUR-USERNAME"
 
   # -- Search (Fuse.js) --
   [params.fuseOpts]
@@ -79,28 +83,22 @@ enableRobotsTXT = true              # Generates robots.txt so search engines can
   weight = 10
 
 [[menu.main]]
-  identifier = "tags"
-  name = "Tags"
-  url = "/tags/"
-  weight = 20
-
-[[menu.main]]
   identifier = "archives"
   name = "Archive"
   url = "/archives/"
-  weight = 30
+  weight = 20
 
 [[menu.main]]
   identifier = "search"
   name = "Search"
   url = "/search/"
-  weight = 40
+  weight = 30
 
 [[menu.main]]
   identifier = "about"
   name = "About"
   url = "/about/"
-  weight = 50
+  weight = 40
 
 # =============================================================================
 # Markdown & Code Highlighting
