@@ -1,6 +1,6 @@
 +++
 date = '2026-10-12T12:14:41+02:00'
-draft = true
+draft = false
 title = 'Palantir Made Me Think of Junger'
 +++
 
